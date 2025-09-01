@@ -3,6 +3,8 @@ import { RouterProvider } from "react-router/dom";
 import Layout from "./Layout/Layout";
 import { Pages } from "./Pages/Pages";
 
+const base = import.meta.env.BASE_URL;
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,7 +15,9 @@ const router = createBrowserRouter([
       element: p.element,
     })),
   }
-]);
+],
+{ basename: base }
+);
 
 const Router = () => <RouterProvider router={router} />;
 
