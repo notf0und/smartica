@@ -5,6 +5,6 @@ import { analyzer } from 'vite-bundle-analyzer'
 export default defineConfig({
   plugins: [
     react(),
-     analyzer()
+    // analyzer()
   ],
 })
