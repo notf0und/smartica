@@ -45,6 +45,10 @@ jobs:
       - name: Build with Vite
         run: npm run build -- --base "${{ steps.pages.outputs.base_path }}"
 
+      # Add 404.html for GitHub Pages SPA routing
+      - name: Copy index.html to 404.html
+        run: cp dist/index.html dist/404.html
+
       - name: Upload production build
         uses: actions/upload-pages-artifact@v3
         with:
